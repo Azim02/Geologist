@@ -1,16 +1,18 @@
 class Rubber 
 {      
-    constructor(x, y, width, height, angle) {
+    constructor(x, y, r) {
         var options = {
             'restitution':0.3,
             'friction':5,
             'density':1,
             'isStatic': false,
         }
-        this.body = Bodies.rectangle(x, y, width, height, options);
-        this.width = width;
-        this.height = height;
+        
+        this.x = x;
+        this.y = y;
+        this.r = r ;
        
+        this.body=Bodies.circle(this.x, this.y, (this.r-20)/2, options)
         World.add(world, this.body);
       }
       display(){
@@ -21,8 +23,8 @@ class Rubber
         rotate(angle);
         rectMode(CENTER);
         stroke("black");
-        fill("blue");
-         rect(0,0,this.width,this.height);
+        fill("darkblue");
+        ellipse(0,0,this.r, this.r);
         pop();    
       }
 }
