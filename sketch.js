@@ -27,7 +27,7 @@ function setup() {
 
 	stone = new Stone(400, 320, 70, 70);
 
-	rubber = new Rubber(300, 200, 50, 70);
+	 rubber=new Rubber(300, 200, 70);
 
 	iron = new Iron(520, 200, 70, 50);
 	
@@ -41,6 +41,7 @@ function draw() {
   background("skyblue");
   rectMode(CENTER);
 
+  Engine.update(engine);	
   
   ground.display();
   hammer.display();
